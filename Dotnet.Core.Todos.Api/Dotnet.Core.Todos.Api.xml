@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Dotnet.Core.Todos.Api</name>
+    </assembly>
+    <members>
+        <member name="T:Dotnet.Core.Todos.Api.Controllers.TodoController">
+            <summary>
+            Todo API Controller
+            </summary>
+        </member>
+        <member name="M:Dotnet.Core.Todos.Api.Controllers.TodoController.GetV2">
+             <summary>
+             Get a Todo - Asynchronous
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 Get api/v2/Todo
+            
+             </remarks>
+             <returns>Returns a list of Todos</returns>
+             <response code="201">Returns a list of todos</response>
+             <response code="500">If there is any errors</response> 
+        </member>
+        <member name="M:Dotnet.Core.Todos.Api.Controllers.TodoController.Get">
+             <summary>
+             Get a Todo - synchronous
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 Get api/v1/Todo
+            
+             </remarks>
+             <returns>Returns a list of Todos</returns>
+             <response code="201">Returns the newly created item</response>
+             <response code="500">If there is any errors</response>
+        </member>
+        <member name="T:Dotnet.Core.Todos.Api.Swagger.SwaggerConfig">
+            <summary>
+            #SwaggerDocs
+            </summary>
+        </member>
+        <member name="M:Dotnet.Core.Todos.Api.Swagger.SwaggerConfig.ConfigureApp(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+            <summary>
+            This is to configure the swagger UI versions dropdown box to show different versions
+            </summary>
+        </member>
+    </members>
+</doc>
