@@ -1,4 +1,4 @@
-﻿* Asp.net Core EF Core sample
+﻿# Web API Best Practices
 
 - Async conrollers with Async queries
 - Lazyloading in DBContext #lazyloading
