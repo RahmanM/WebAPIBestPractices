@@ -1,6 +1,8 @@
-﻿namespace Dotnet.Core.Todos.Database
+﻿using Dotnet.Core.Todos.Data;
+
+namespace Dotnet.Core.Todos.Database
 {
-    public class Category
+    public class Category : IEntity
     {
         public int Id { get; set; }
 

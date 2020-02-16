@@ -4,14 +4,29 @@
         <name>Dotnet.Core.Todos.Api</name>
     </assembly>
     <members>
+        <member name="T:Dotnet.Core.Todos.Api.Controllers.TodoProfile">
+            <summary>
+            Automapper that maps TodoDto to TodoViewModel
+            This is called in application startup
+            </summary>
+        </member>
         <member name="T:Dotnet.Core.Todos.Api.Controllers.TodoController">
             <summary>
             Todo API Controller
             </summary>
         </member>
+        <member name="M:Dotnet.Core.Todos.Api.Controllers.TodoController.#ctor(Microsoft.Extensions.Logging.ILogger{Dotnet.Core.Todos.Api.Controllers.TodoController},AutoMapper.IMapper,Sieve.Services.SieveProcessor,Donet.Core.Todos.Data.Repositories.TodoRepository.ITodoRepository)">
+            <summary>
+            Default constructor
+            </summary>
+            <param name="logger">logger</param>
+            <param name="mapper">Automapper</param>
+            <param name="sieveProcessor">Query, sorting, pating processor</param>
+            <param name="todoRepository">Todo Repo helper</param>
+        </member>
         <member name="M:Dotnet.Core.Todos.Api.Controllers.TodoController.GetV2">
              <summary>
-             Get a Todo - Asynchronous
+             Get a Todo - IQueryable
              </summary>
              <remarks>
              Sample request:
@@ -23,6 +38,7 @@
              <response code="201">Returns a list of todos</response>
              <response code="500">If there is any errors</response> 
         </member>
+        <!-- Badly formed XML comment ignored for member "M:Dotnet.Core.Todos.Api.Controllers.TodoController.GetV2(Sieve.Models.SieveModel)" -->
         <member name="M:Dotnet.Core.Todos.Api.Controllers.TodoController.Get">
              <summary>
              Get a Todo - synchronous
@@ -36,6 +52,71 @@
              <returns>Returns a list of Todos</returns>
              <response code="201">Returns the newly created item</response>
              <response code="500">If there is any errors</response>
+        </member>
+        <member name="M:Dotnet.Core.Todos.Api.Controllers.TodoController.Post(Dotnet.Core.Todos.Api.Models.TodoViewModel)">
+            <summary>
+            Create new Todo
+            </summary>
+            <param name="todoViewModel">Todo view mdoel</param>
+            <returns>Updated todo with new ID created</returns>
+        </member>
+        <member name="M:Dotnet.Core.Todos.Api.Controllers.TodoController.Put(Dotnet.Core.Todos.Api.Models.TodoViewModel)">
+             <summary>
+             Create new Todo
+             </summary>
+             <remarks>
+             Sample:
+             
+             {
+              "id": 0,
+              "description": "string",
+              "completed": true,
+              "categoryId": 0,
+              "active": true
+            }
+             </remarks>
+             <param name="todoViewModel">Todo view Model</param>
+             <returns>HTTP 200</returns>
+        </member>
+        <member name="T:Dotnet.Core.Todos.Api.DependencyInjection.ApplicationDependencyConfigurations">
+            <summary>
+            Application entities DI configurations
+            </summary>
+        </member>
+        <member name="M:Dotnet.Core.Todos.Api.DependencyInjection.ApplicationDependencyConfigurations.ConfigureApplicationDependencies(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Configure Application Dependencies
+            </summary>
+        </member>
+        <member name="T:Dotnet.Core.Todos.Api.Models.TodoViewModel">
+            <summary>
+            A class representing a Todo
+            </summary>
+        </member>
+        <member name="P:Dotnet.Core.Todos.Api.Models.TodoViewModel.Id">
+            <summary>
+            Unique identifier
+            </summary>
+        </member>
+        <member name="P:Dotnet.Core.Todos.Api.Models.TodoViewModel.Description">
+            <summary>
+            Description
+            </summary>
+        </member>
+        <member name="P:Dotnet.Core.Todos.Api.Models.TodoViewModel.Completed">
+            <summary>
+            Indicates if Todo is completed
+            </summary>
+        </member>
+        <member name="P:Dotnet.Core.Todos.Api.Models.TodoViewModel.CategoryId">
+            <summary>
+            Category of the Todo
+            </summary>
+        </member>
+        <member name="P:Dotnet.Core.Todos.Api.Models.TodoViewModel.Active">
+            <summary>
+            Is Todo active
+            </summary>
         </member>
         <member name="T:Dotnet.Core.Todos.Api.Swagger.SwaggerConfig">
             <summary>

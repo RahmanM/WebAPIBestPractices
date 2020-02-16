@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dotnet.Core.Todos.Api", "Do
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Donet.Core.Todos.Data", "Donet.Core.Todos.Data\Donet.Core.Todos.Data.csproj", "{D43621E3-B2D6-497E-9C15-DBEC52813C4C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dotnet.Core.Todos.Data.Tests", "Dotnet.Core.Todos.Data.Tests\Dotnet.Core.Todos.Data.Tests.csproj", "{987AFC8F-6373-46F1-83BF-A12AD6A24A8B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dotnet.Core.Todos.Data.Tests", "Dotnet.Core.Todos.Data.Tests\Dotnet.Core.Todos.Data.Tests.csproj", "{987AFC8F-6373-46F1-83BF-A12AD6A24A8B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

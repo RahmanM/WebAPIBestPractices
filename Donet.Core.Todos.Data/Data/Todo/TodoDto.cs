@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Dotnet.Core.Todos.Data
 {
-    public class TodoDto : IDto
+    public class TodoDto : IEntity
     {
         public int Id { get; set; }
 
@@ -20,7 +20,7 @@ namespace Dotnet.Core.Todos.Data
         public string Category { get; set; }
     }
 
-    public class TodoByCategory : IDto
+    public class TodoByCategory : IEntity
     {
         public int CategoryId { get; set; }
 

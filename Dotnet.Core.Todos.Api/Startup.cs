@@ -1,4 +1,6 @@
+using AutoMapper;
 using Dotnet.Core.Todos.Api.Action_Filters;
+using Dotnet.Core.Todos.Api.DependencyInjection;
 using Dotnet.Core.Todos.Api.ExceptionHandler;
 using Dotnet.Core.Todos.Api.Swagger;
 using Dotnet.Core.Todos.Database;
@@ -9,6 +11,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Sieve.Services;
 
 namespace Dotnet.Core.Todos.Api
 {
@@ -33,11 +36,20 @@ namespace Dotnet.Core.Todos.Api
                 config.OutputFormatters.Add(new XmlSerializerOutputFormatter());
             });
 
+            // #AutoMapper
+            services.AddAutoMapper(typeof(Startup));
+
             // #ApiVersioning
             services.AddApiVersioning();
 
+            // Register lazy cache
+            services.AddLazyCache();
+
             // #Swagger
             SwaggerConfig.ConfigureService(services);
+
+            // Add sorting, filtering, paging 
+            services.AddScoped<SieveProcessor>();
 
             services.AddControllers();
 
@@ -45,6 +57,9 @@ namespace Dotnet.Core.Todos.Api
 
             // #injectingcontext
             services.AddDbContext<TodoContext>(options => options.UseMySql("server = localhost; user id = todoUser; password = todoUser; port = 3306; database = todos;"));
+
+            // Application level services DI configuration
+            services.ConfigureApplicationDependencies();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
