@@ -11,4 +11,8 @@
     <PackageReference Include="Sieve" Version="2.3.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Dotnet.Core.Todo.Common\Dotnet.Core.Todos.Common.csproj" />
+  </ItemGroup>
+
 </Project>

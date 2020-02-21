@@ -13,8 +13,8 @@ namespace Dotnet.Core.Todos.Api.Controllers
     {
         public TodoProfile()
         {
-            CreateMap<Todo, TodoViewModel>();
-            CreateMap<TodoViewModel, Todo>();
+            CreateMap<Database.Todo, TodoViewModel>();
+            CreateMap<TodoViewModel, Database.Todo>();
         }
     }
 }

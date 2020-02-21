@@ -1,4 +1,5 @@
-﻿using Dotnet.Core.Todos.Data;
+﻿using Dotnet.Core.Todos.Common.ExceptionTypes;
+using Dotnet.Core.Todos.Data;
 using Dotnet.Core.Todos.Database;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -31,7 +32,7 @@ namespace Donet.Core.Todos.Data.GenericRepository
         {
             if (id <= 0)
             {
-                throw new InvalidOperationException("Id is required!");
+                throw new BusinessException("Id is required!");
             }
 
             var entity = await GetById(id);
@@ -60,7 +61,7 @@ namespace Donet.Core.Todos.Data.GenericRepository
 
             if (entity.Id <= 0)
             {
-                throw new InvalidOperationException("Entity Id should be greater than zero!");
+                throw new BusinessException("Entity Id should be greater than zero!");
             }
 
             var entry = _dbContext.Set<TEntity>().Attach(entity);

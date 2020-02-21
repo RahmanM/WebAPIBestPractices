@@ -136,17 +136,18 @@ namespace Dotnet.Core.Todos.Api.Controllers
         }
 
         /// <summary>
-        /// Create new Todo
+        /// Update existing Todo
         /// </summary>
         /// <remarks>
         /// Sample:
         /// 
         /// {
-        ///  "description": "string",
+        ///  "id": 1,
+        ///  "description": "updated",
         ///  "completed": true,
         ///  "categoryId": 2,
         ///  "active": true
-        ///}
+        /// }
         /// </remarks>
         /// <param name="todoViewModel">Todo view Model</param>
         /// <returns>HTTP 200</returns>
@@ -158,6 +159,19 @@ namespace Dotnet.Core.Todos.Api.Controllers
         {
             var todo = _mapper.Map<Todo>(todoViewModel);
             await _todoRepository.Update(todoViewModel.Id, todo);
+        }
+
+        /// <summary>
+        /// Delelte a todo by Id
+        /// </summary>
+        /// <param name="id">Todo Id</param>
+        [ModelValidation]
+        [HttpDelete]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task Delete(int id)
+        {
+            await _todoRepository.Delete(id);
         }
     }
 }

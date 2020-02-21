@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Dotnet.Core.Todos.Common.ExceptionTypes;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Net;
@@ -34,14 +35,23 @@ namespace Dotnet.Core.Todos.Api.ExceptionHandler
 
         private Task HandleExceptionAsync(HttpContext context, Exception exception)
         {
-            context.Response.ContentType = "application/json";
-            context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
+            var errorDetails = new ErrorDetails();
 
-            return context.Response.WriteAsync(new ErrorDetails()
+            if(exception is BusinessException)
             {
-                StatusCode = context.Response.StatusCode,
-                Message = "Internal Server Error from the custom middleware." + Environment.NewLine + exception.Message
-            }.ToString()) ;
+                errorDetails.StatusCode = (int) HttpStatusCode.BadRequest;
+                errorDetails.Message = exception.Message;
+            }
+            else
+            {
+                errorDetails.StatusCode = (int)HttpStatusCode.InternalServerError;
+                errorDetails.Message = exception.Message;
+            }
+
+            context.Response.ContentType = "application/json";
+            context.Response.StatusCode = (int) HttpStatusCode.InternalServerError;
+
+            return context.Response.WriteAsync(errorDetails.ToString()) ;
         }
     }
 
