@@ -13,7 +13,7 @@ namespace Donet.Core.Todos.Data.GenericRepository
 
         Task<int> Create(TEntity entity);
 
-        Task Update(int id, TEntity entity);
+        Task Update(TEntity entity);
 
         Task Delete(int id);
     }

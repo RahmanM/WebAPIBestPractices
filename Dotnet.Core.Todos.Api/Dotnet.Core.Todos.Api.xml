@@ -60,7 +60,7 @@
             <param name="todoViewModel">Todo view mdoel</param>
             <returns>Updated todo with new ID created</returns>
         </member>
-        <member name="M:Dotnet.Core.Todos.Api.Controllers.TodoController.Put(Dotnet.Core.Todos.Api.Models.TodoViewModel)">
+        <member name="M:Dotnet.Core.Todos.Api.Controllers.TodoController.Put(Dotnet.Core.Todos.Api.Models.UpdateTodoViewModel)">
             <summary>
             Update existing Todo
             </summary>
@@ -75,6 +75,7 @@
              "active": true
             }
             </remarks>
+            <param name="id">Unique identifier</param>
             <param name="todoViewModel">Todo view Model</param>
             <returns>HTTP 200</returns>
         </member>
@@ -124,6 +125,36 @@
             Is Todo active
             </summary>
         </member>
+        <member name="T:Dotnet.Core.Todos.Api.Models.UpdateTodoViewModel">
+            <summary>
+            A class representing a Todo
+            </summary>
+        </member>
+        <member name="P:Dotnet.Core.Todos.Api.Models.UpdateTodoViewModel.Id">
+            <summary>
+            Unique identifier of the Todo
+            </summary>
+        </member>
+        <member name="P:Dotnet.Core.Todos.Api.Models.UpdateTodoViewModel.Description">
+            <summary>
+            Description
+            </summary>
+        </member>
+        <member name="P:Dotnet.Core.Todos.Api.Models.UpdateTodoViewModel.Completed">
+            <summary>
+            Indicates if Todo is completed
+            </summary>
+        </member>
+        <member name="P:Dotnet.Core.Todos.Api.Models.UpdateTodoViewModel.CategoryId">
+            <summary>
+            Category of the Todo
+            </summary>
+        </member>
+        <member name="P:Dotnet.Core.Todos.Api.Models.UpdateTodoViewModel.Active">
+            <summary>
+            Is Todo active
+            </summary>
+        </member>
         <member name="T:Dotnet.Core.Todos.Api.Swagger.SwaggerConfig">
             <summary>
             #SwaggerDocs
@@ -132,6 +163,26 @@
         <member name="M:Dotnet.Core.Todos.Api.Swagger.SwaggerConfig.ConfigureApp(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
             <summary>
             This is to configure the swagger UI versions dropdown box to show different versions
+            </summary>
+        </member>
+        <member name="T:Dotnet.Core.Todos.Api.Validators.CreateTodoValidator">
+            <summary>
+            Validations for create todo model
+            </summary>
+        </member>
+        <member name="M:Dotnet.Core.Todos.Api.Validators.CreateTodoValidator.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:Dotnet.Core.Todos.Api.Validators.UpdateTodoValidator">
+            <summary>
+            Validations for update todo model
+            </summary>
+        </member>
+        <member name="M:Dotnet.Core.Todos.Api.Validators.UpdateTodoValidator.#ctor">
+            <summary>
+            Default constructor
             </summary>
         </member>
     </members>

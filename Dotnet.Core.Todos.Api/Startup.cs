@@ -4,6 +4,7 @@ using Dotnet.Core.Todos.Api.DependencyInjection;
 using Dotnet.Core.Todos.Api.ExceptionHandler;
 using Dotnet.Core.Todos.Api.Swagger;
 using Dotnet.Core.Todos.Database;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Formatters;
@@ -34,7 +35,15 @@ namespace Dotnet.Core.Todos.Api
                 config.RespectBrowserAcceptHeader = true;
                 config.InputFormatters.Add(new XmlSerializerInputFormatter(null));
                 config.OutputFormatters.Add(new XmlSerializerOutputFormatter());
-            });
+
+                // #GlobalFilters
+                config.Filters.Add(typeof(ModelValidationAttribute));
+            }).AddFluentValidation(options =>
+            {
+                // # FluentValidaton
+                options.RegisterValidatorsFromAssemblyContaining<Startup>();
+            }); 
+
 
             // #AutoMapper
             services.AddAutoMapper(typeof(Startup));
@@ -69,7 +78,6 @@ namespace Dotnet.Core.Todos.Api
             {
                 app.UseDeveloperExceptionPage();
             }
-
 
             // #Swagger
             SwaggerConfig.ConfigureApp(app);

@@ -1,17 +1,17 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using AutoMapper;
+﻿using AutoMapper;
 using Donet.Core.Todos.Data.Repositories.TodoRepository;
 using Dotnet.Core.Todos.Api.Action_Filters;
 using Dotnet.Core.Todos.Api.Models;
-using Dotnet.Core.Todos.Data;
 using Dotnet.Core.Todos.Database;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Sieve.Models;
 using Sieve.Services;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace Dotnet.Core.Todos.Api.Controllers
 {
@@ -125,7 +125,6 @@ namespace Dotnet.Core.Todos.Api.Controllers
         /// </summary>
         /// <param name="todoViewModel">Todo view mdoel</param>
         /// <returns>Updated todo with new ID created</returns>
-        [ModelValidation]
         [HttpPost]
         public async Task<IActionResult> Post(TodoViewModel todoViewModel)
         {
@@ -149,16 +148,16 @@ namespace Dotnet.Core.Todos.Api.Controllers
         ///  "active": true
         /// }
         /// </remarks>
+        /// <param name="id">Unique identifier</param>
         /// <param name="todoViewModel">Todo view Model</param>
         /// <returns>HTTP 200</returns>
-        [ModelValidation]
         [HttpPut]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task Put(TodoViewModel todoViewModel)
+        public async Task Put(UpdateTodoViewModel todoViewModel)
         {
             var todo = _mapper.Map<Todo>(todoViewModel);
-            await _todoRepository.Update(todoViewModel.Id, todo);
+            await _todoRepository.Update(todo);
         }
 
         /// <summary>
@@ -169,7 +168,7 @@ namespace Dotnet.Core.Todos.Api.Controllers
         [HttpDelete]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task Delete(int id)
+        public async Task Delete([Required] int id)
         {
             await _todoRepository.Delete(id);
         }

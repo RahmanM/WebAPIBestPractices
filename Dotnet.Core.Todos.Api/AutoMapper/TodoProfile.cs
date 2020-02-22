@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using Dotnet.Core.Todos.Api.Models;
-using Dotnet.Core.Todos.Data;
 using Dotnet.Core.Todos.Database;
 
 namespace Dotnet.Core.Todos.Api.Controllers
@@ -14,7 +13,8 @@ namespace Dotnet.Core.Todos.Api.Controllers
         public TodoProfile()
         {
             CreateMap<Database.Todo, TodoViewModel>();
-            CreateMap<TodoViewModel, Database.Todo>();
+            CreateMap<TodoViewModel, Todo>();
+            CreateMap<UpdateTodoViewModel, Todo>();
         }
     }
 }

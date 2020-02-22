@@ -55,7 +55,7 @@ namespace Donet.Core.Todos.Data.GenericRepository
             return await _dbContext.Set<TEntity>().FirstOrDefaultAsync(e => e.Id == id);
         }
 
-        public async Task Update(int id, TEntity entity)
+        public async Task Update(TEntity entity)
         {
             // TODO: Apply model validation to make sure all properties are provided - Throw Business Exception
 
