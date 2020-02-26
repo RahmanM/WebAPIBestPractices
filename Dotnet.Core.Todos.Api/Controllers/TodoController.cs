@@ -47,7 +47,7 @@ namespace Dotnet.Core.Todos.Api.Controllers
         }
 
         /// <summary>
-        /// Get a Todo - IQueryable
+        /// Get Cached Todo - Cached Todos. Todos are cached until a new todo is added, updated, or removed.
         /// </summary>
         /// <remarks>
         /// Sample request:
@@ -59,12 +59,12 @@ namespace Dotnet.Core.Todos.Api.Controllers
         /// <response code="201">Returns a list of todos</response>
         /// <response code="500">If there is any errors</response> 
         [MapToApiVersion("2")]
-        [HttpGet("GetV2")]
+        [HttpGet("all-v2")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public IEnumerable<TodoViewModel> GetV2()
         {
-            var todos = _todoRepository.GetAll();
+            var todos = _todoRepository.GetAllList();
             var todosViewModel = _mapper.Map<List<TodoViewModel>>(todos);
             return todosViewModel;
         }
@@ -82,7 +82,7 @@ namespace Dotnet.Core.Todos.Api.Controllers
         /// <response code="201">Returns a list of todos</response>
         /// <response code="500">If there is any errors</response> 
         [MapToApiVersion("2")]
-        [HttpGet("GetTodoPagedFileredSorted")]
+        [HttpGet("all-paged-filered-sorted")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public IEnumerable<TodoViewModel> GetV2([FromQuery] SieveModel queryStrings)
@@ -109,7 +109,7 @@ namespace Dotnet.Core.Todos.Api.Controllers
         /// <response code="201">Returns the newly created item</response>
         /// <response code="500">If there is any errors</response>
         [MapToApiVersion("1")]
-        [HttpGet("Get")]
+        [HttpGet("all")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         //[Caching("TodoConroller_Get")]
@@ -125,13 +125,13 @@ namespace Dotnet.Core.Todos.Api.Controllers
         /// </summary>
         /// <param name="todoViewModel">Todo view mdoel</param>
         /// <returns>Updated todo with new ID created</returns>
-        [HttpPost]
+        [HttpPost("create-todo")]
         public async Task<IActionResult> Post(TodoViewModel todoViewModel)
         {
             var todo = _mapper.Map<Todo>(todoViewModel);
-            var id = await _todoRepository.Create(todo);
+            var id = await _todoRepository.CreateAsync(todo);
             todoViewModel.Id = id;
-            return Ok(todoViewModel);
+            return Created("/todo/" + id, todoViewModel);
         }
 
         /// <summary>
@@ -148,16 +148,16 @@ namespace Dotnet.Core.Todos.Api.Controllers
         ///  "active": true
         /// }
         /// </remarks>
-        /// <param name="id">Unique identifier</param>
         /// <param name="todoViewModel">Todo view Model</param>
         /// <returns>HTTP 200</returns>
-        [HttpPut]
+        [HttpPut("update-todo")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task Put(UpdateTodoViewModel todoViewModel)
+        public async Task<IActionResult> Put(UpdateTodoViewModel todoViewModel)
         {
             var todo = _mapper.Map<Todo>(todoViewModel);
-            await _todoRepository.Update(todo);
+            await _todoRepository.UpdateAsync(todo);
+            return Ok();
         }
 
         /// <summary>
@@ -165,12 +165,13 @@ namespace Dotnet.Core.Todos.Api.Controllers
         /// </summary>
         /// <param name="id">Todo Id</param>
         [ModelValidation]
-        [HttpDelete]
+        [HttpDelete( "delete-todo")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task Delete([Required] int id)
+        public async Task<IActionResult> Delete([Required] int id)
         {
-            await _todoRepository.Delete(id);
+            await _todoRepository.DeleteAsync(id);
+            return Ok();
         }
     }
 }

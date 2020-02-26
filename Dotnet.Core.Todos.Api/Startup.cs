@@ -1,5 +1,6 @@
 using AutoMapper;
 using Dotnet.Core.Todos.Api.Action_Filters;
+using Dotnet.Core.Todos.Api.Configurations;
 using Dotnet.Core.Todos.Api.DependencyInjection;
 using Dotnet.Core.Todos.Api.ExceptionHandler;
 using Dotnet.Core.Todos.Api.Swagger;
@@ -42,7 +43,8 @@ namespace Dotnet.Core.Todos.Api
             {
                 // # FluentValidaton
                 options.RegisterValidatorsFromAssemblyContaining<Startup>();
-            }); 
+            })
+            .ConfigureLinks(); // Configure Hataeos but not working
 
 
             // #AutoMapper

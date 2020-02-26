@@ -1,4 +1,5 @@
 ﻿using Donet.Core.Todos.Data.Repositories.TodoRepository;
+using Dotnet.Core.Todos.Api.CachingDecorators;
 using Dotnet.Core.Todos.Data;
 using Dotnet.Core.Todos.Database;
 using Microsoft.Extensions.DependencyInjection;
@@ -17,7 +18,8 @@ namespace Dotnet.Core.Todos.Api.DependencyInjection
         {
             services.AddScoped<IDtoQuery<TodoDto>, AllTodosQuery>();
             services.AddScoped<IDtoQuery<TodoByCategory>, TodosGroupByCategoryQuery>();
-            services.AddScoped<ITodoRepository, TodoRepository>();
+            // #Caching -> Here swapping the TodoRepository with CachingDecorator without any further code changes
+            services.AddScoped<ITodoRepository, TodoCachingDecorator>();
         }
     }
 }

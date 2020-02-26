@@ -13,5 +13,7 @@ namespace Donet.Core.Todos.Data.Repositories.TodoRepository
         public TodoRepository(TodoContext dbContext) : base(dbContext)
         {
         }
+
+        
     }
 }

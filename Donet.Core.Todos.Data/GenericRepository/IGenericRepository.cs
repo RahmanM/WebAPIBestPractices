@@ -1,4 +1,5 @@
 ﻿using Dotnet.Core.Todos.Data;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -9,13 +10,20 @@ namespace Donet.Core.Todos.Data.GenericRepository
     {
         IQueryable<TEntity> GetAll();
 
-        Task<TEntity> GetById(int id);
+        IEnumerable<TEntity> GetAllList();
 
-        Task<int> Create(TEntity entity);
+        TEntity GetById(int id);
 
-        Task Update(TEntity entity);
+        Task<TEntity> GetByIdAsync(int id);
 
-        Task Delete(int id);
+        Task<int> CreateAsync(TEntity entity);
+        int Create(TEntity entity);
+
+        Task UpdateAsync(TEntity entity);
+        void Update(TEntity entity);
+
+        Task DeleteAsync(int id);
+        void Delete(int id);
     }
 
 }

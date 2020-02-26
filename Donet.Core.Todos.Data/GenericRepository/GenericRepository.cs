@@ -3,6 +3,7 @@ using Dotnet.Core.Todos.Data;
 using Dotnet.Core.Todos.Database;
 using Microsoft.EntityFrameworkCore;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -19,7 +20,14 @@ namespace Donet.Core.Todos.Data.GenericRepository
             _dbContext = dbContext;
         }
 
-        public async Task<int> Create(TEntity entity)
+        public virtual int Create(TEntity entity)
+        {
+            _dbContext.Set<TEntity>().Add(entity);
+            _dbContext.SaveChanges();
+            return entity.Id;
+        }
+
+        public virtual async Task<int> CreateAsync(TEntity entity)
         {
             // TODO: Apply model validation to make sure all properties are provided - Throw Business Exception
 
@@ -28,34 +36,73 @@ namespace Donet.Core.Todos.Data.GenericRepository
             return entity.Id;
         }
 
-        public async Task Delete(int id)
+        public virtual void Delete(int id)
         {
             if (id <= 0)
             {
                 throw new BusinessException("Id is required!");
             }
 
-            var entity = await GetById(id);
+            var entity = GetById(id);
+            _dbContext.Set<TEntity>().Remove(entity);
+            _dbContext.SaveChanges();
+        }
+
+        public virtual async Task DeleteAsync(int id)
+        {
+            if (id <= 0)
+            {
+                throw new BusinessException("Id is required!");
+            }
+
+            var entity = await GetByIdAsync(id);
             _dbContext.Set<TEntity>().Remove(entity);
             await _dbContext.SaveChangesAsync();
         }
 
-        public IQueryable<TEntity> GetAll()
+        public virtual IQueryable<TEntity> GetAll()
         {
             return _dbContext.Set<TEntity>();
         }
 
-        public async Task<TEntity> GetById(int id)
+        public virtual IEnumerable<TEntity> GetAllList()
+        {
+            return _dbContext.Set<TEntity>().ToList();
+        }
+
+        public virtual TEntity GetById(int id)
         {
             if (id <= 0)
             {
                 throw new InvalidOperationException("Id is required!");
             }
 
-            return await _dbContext.Set<TEntity>().FirstOrDefaultAsync(e => e.Id == id);
+            return _dbContext.Set<TEntity>().SingleOrDefault(e => e.Id == id);
         }
 
-        public async Task Update(TEntity entity)
+        public virtual async Task<TEntity> GetByIdAsync(int id)
+        {
+            if (id <= 0)
+            {
+                throw new InvalidOperationException("Id is required!");
+            }
+
+            return await _dbContext.Set<TEntity>().SingleOrDefaultAsync(e => e.Id == id);
+        }
+
+        public virtual void Update(TEntity entity)
+        {
+            if (entity.Id <= 0)
+            {
+                throw new BusinessException("Entity Id should be greater than zero!");
+            }
+
+            var entry = _dbContext.Set<TEntity>().Attach(entity);
+            entry.State = EntityState.Modified;
+            _dbContext.SaveChanges();
+        }
+
+        public virtual async Task UpdateAsync(TEntity entity)
         {
             // TODO: Apply model validation to make sure all properties are provided - Throw Business Exception
 

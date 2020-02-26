@@ -13,7 +13,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Donet.Core.Todos.Data", "Do
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dotnet.Core.Todos.Data.Tests", "Dotnet.Core.Todos.Data.Tests\Dotnet.Core.Todos.Data.Tests.csproj", "{987AFC8F-6373-46F1-83BF-A12AD6A24A8B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dotnet.Core.Todos.Common", "Dotnet.Core.Todo.Common\Dotnet.Core.Todos.Common.csproj", "{592C145D-6773-476C-9DEC-1871DD8D1368}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dotnet.Core.Todos.Common", "Dotnet.Core.Todo.Common\Dotnet.Core.Todos.Common.csproj", "{592C145D-6773-476C-9DEC-1871DD8D1368}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{BF6F9930-DD80-4CC9-B7C5-38A98C796D4C}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
