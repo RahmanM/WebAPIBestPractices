@@ -29,6 +29,7 @@ namespace Dotnet.Core.Todos.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
             // #ContentNegociation
             services.AddMvc(config =>
             {
@@ -39,6 +40,7 @@ namespace Dotnet.Core.Todos.Api
 
                 // #GlobalFilters
                 config.Filters.Add(typeof(ModelValidationAttribute));
+
             }).AddFluentValidation(options =>
             {
                 // # FluentValidaton

@@ -26,7 +26,7 @@
         </member>
         <member name="M:Dotnet.Core.Todos.Api.Controllers.TodoController.GetV2">
              <summary>
-             Get a Todo - IQueryable
+             Get Cached Todo - Cached Todos. Todos are cached until a new todo is added, updated, or removed.
              </summary>
              <remarks>
              Sample request:
@@ -75,7 +75,6 @@
              "active": true
             }
             </remarks>
-            <param name="id">Unique identifier</param>
             <param name="todoViewModel">Todo view Model</param>
             <returns>HTTP 200</returns>
         </member>
@@ -84,6 +83,11 @@
             Delelte a todo by Id
             </summary>
             <param name="id">Todo Id</param>
+        </member>
+        <member name="T:Dotnet.Core.Todos.Api.CachingDecorators.TodoCachingDecorator">
+            <summary>
+            Caching Decorator that returns Todos from cache until a todo is added, updated or removed!
+            </summary>
         </member>
         <member name="T:Dotnet.Core.Todos.Api.DependencyInjection.ApplicationDependencyConfigurations">
             <summary>

@@ -44,6 +44,8 @@ namespace Dotnet.Core.Todos.Api.Controllers
             _mapper = mapper;
             _sieveProcessor = sieveProcessor;
             _todoRepository = todoRepository;
+
+            logger.LogInformation("TodoController-> DI completed successfuly!");
         }
 
         /// <summary>
