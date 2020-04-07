@@ -224,3 +224,257 @@ FROM `Todos` AS `t`
 2020-03-01 09:28:08.352 +11:00 [INF] Executed action Dotnet.Core.Todos.Api.Controllers.TodoController.Get (Dotnet.Core.Todos.Api) in 108.2687ms
 2020-03-01 09:28:08.363 +11:00 [INF] Executed endpoint 'Dotnet.Core.Todos.Api.Controllers.TodoController.Get (Dotnet.Core.Todos.Api)'
 2020-03-01 09:28:08.372 +11:00 [INF] Request finished in 145.6736ms 200 application/json; charset=utf-8
+2020-04-07 22:05:57.550 +10:00 [INF] User profile is available. Using 'C:\Users\Rahman\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-04-07 22:05:59.012 +10:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-04-07 22:05:59.018 +10:00 [INF] Hosting environment: Development
+2020-04-07 22:05:59.027 +10:00 [INF] Content root path: D:\Rahman\Dotnet.Core.Database\Dotnet.Core.Todos.Api
+2020-04-07 22:05:59.209 +10:00 [INF] Request starting HTTP/2.0 GET https://localhost:44355/swagger  
+2020-04-07 22:05:59.428 +10:00 [INF] Request starting HTTP/2.0 GET https://localhost:44355/swagger/index.html  
+2020-04-07 22:05:59.437 +10:00 [INF] Request finished in 234.5615ms 301 
+2020-04-07 22:05:59.558 +10:00 [INF] Request finished in 129.7887ms 200 text/html;charset=utf-8
+2020-04-07 22:05:59.647 +10:00 [INF] Request starting HTTP/2.0 GET https://localhost:44355/swagger/swagger-ui.css  
+2020-04-07 22:05:59.654 +10:00 [INF] Request starting HTTP/2.0 GET https://localhost:44355/swagger/swagger-ui-bundle.js  
+2020-04-07 22:05:59.653 +10:00 [INF] Request starting HTTP/2.0 GET https://localhost:44355/swagger/swagger-ui-standalone-preset.js  
+2020-04-07 22:05:59.804 +10:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2020-04-07 22:05:59.804 +10:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2020-04-07 22:05:59.804 +10:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2020-04-07 22:05:59.825 +10:00 [INF] Request finished in 177.7283ms 200 text/css
+2020-04-07 22:05:59.825 +10:00 [INF] Request finished in 171.4623ms 200 application/javascript
+2020-04-07 22:05:59.825 +10:00 [INF] Request finished in 171.3705ms 200 application/javascript
+2020-04-07 22:06:00.301 +10:00 [INF] Request starting HTTP/2.0 GET https://localhost:44355/swagger/v1/swagger.json  
+2020-04-07 22:06:00.450 +10:00 [INF] Request starting HTTP/2.0 GET https://localhost:44355/swagger/favicon-32x32.png  
+2020-04-07 22:06:00.461 +10:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2020-04-07 22:06:00.469 +10:00 [INF] Request finished in 19.1839ms 200 image/png
+2020-04-07 22:06:01.341 +10:00 [INF] Request finished in 1040.6901ms 200 application/json;charset=utf-8
+2020-04-07 22:06:13.830 +10:00 [INF] Request starting HTTP/2.0 GET https://localhost:44355/swagger/v2/swagger.json  
+2020-04-07 22:06:13.870 +10:00 [INF] Request finished in 39.7797ms 200 application/json;charset=utf-8
+2020-04-07 22:06:30.800 +10:00 [INF] Request starting HTTP/2.0 GET https://localhost:44355/api/v2/Todo/all-v2  
+2020-04-07 22:06:30.900 +10:00 [INF] Executing endpoint 'Dotnet.Core.Todos.Api.Controllers.TodoController.GetV2 (Dotnet.Core.Todos.Api)'
+2020-04-07 22:06:30.994 +10:00 [INF] Route matched with {action = "GetV2", controller = "Todo"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[Dotnet.Core.Todos.Api.Models.TodoViewModel] GetV2() on controller Dotnet.Core.Todos.Api.Controllers.TodoController (Dotnet.Core.Todos.Api).
+2020-04-07 22:06:31.828 +10:00 [INF] TodoController-> DI completed successfuly!
+2020-04-07 22:06:32.037 +10:00 [INF] Executing action method Dotnet.Core.Todos.Api.Controllers.TodoController.GetV2 (Dotnet.Core.Todos.Api) - Validation state: "Valid"
+2020-04-07 22:06:33.372 +10:00 [INF] Entity Framework Core 3.1.1 initialized 'TodoContext' using provider 'Pomelo.EntityFrameworkCore.MySql' with options: using lazy-loading proxies 
+2020-04-07 22:06:34.871 +10:00 [INF] Executed DbCommand (174ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `t`.`Id`, `t`.`Active`, `t`.`CategoryId`, `t`.`Completed`, `t`.`Description`
+FROM `Todos` AS `t`
+2020-04-07 22:06:35.061 +10:00 [INF] Executed action method Dotnet.Core.Todos.Api.Controllers.TodoController.GetV2 (Dotnet.Core.Todos.Api), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 3005.3922ms.
+2020-04-07 22:06:35.079 +10:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Dotnet.Core.Todos.Api.Models.TodoViewModel, Dotnet.Core.Todos.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-04-07 22:06:35.104 +10:00 [INF] Executed action Dotnet.Core.Todos.Api.Controllers.TodoController.GetV2 (Dotnet.Core.Todos.Api) in 4097.5903ms
+2020-04-07 22:06:35.112 +10:00 [INF] Executed endpoint 'Dotnet.Core.Todos.Api.Controllers.TodoController.GetV2 (Dotnet.Core.Todos.Api)'
+2020-04-07 22:06:35.125 +10:00 [INF] Request finished in 4324.981ms 200 application/json; charset=utf-8
+2020-04-07 22:09:37.558 +10:00 [INF] User profile is available. Using 'C:\Users\Rahman\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-04-07 22:09:38.307 +10:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-04-07 22:09:38.314 +10:00 [INF] Hosting environment: Development
+2020-04-07 22:09:38.332 +10:00 [INF] Content root path: D:\Rahman\Dotnet.Core.Database\Dotnet.Core.Todos.Api
+2020-04-07 22:09:38.426 +10:00 [INF] Request starting HTTP/2.0 GET https://localhost:44355/swagger/index.html  
+2020-04-07 22:09:38.562 +10:00 [INF] Request finished in 140.7687ms 200 text/html;charset=utf-8
+2020-04-07 22:09:39.245 +10:00 [INF] Request starting HTTP/2.0 GET https://localhost:44355/swagger/v1/swagger.json  
+2020-04-07 22:09:39.992 +10:00 [INF] Request finished in 747.4464ms 200 application/json;charset=utf-8
+2020-04-07 22:14:38.121 +10:00 [INF] User profile is available. Using 'C:\Users\Rahman\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-04-07 22:14:38.826 +10:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-04-07 22:14:38.832 +10:00 [INF] Hosting environment: Development
+2020-04-07 22:14:38.849 +10:00 [INF] Content root path: D:\Rahman\Dotnet.Core.Database\Dotnet.Core.Todos.Api
+2020-04-07 22:14:38.947 +10:00 [INF] Request starting HTTP/2.0 GET https://localhost:44355/swagger/index.html  
+2020-04-07 22:14:39.078 +10:00 [INF] Request finished in 136.2861ms 200 text/html;charset=utf-8
+2020-04-07 22:14:39.527 +10:00 [INF] Request starting HTTP/2.0 GET https://localhost:44355/swagger/v1/swagger.json  
+2020-04-07 22:14:40.200 +10:00 [INF] Request finished in 673.5433ms 200 application/json;charset=utf-8
+2020-04-07 22:15:11.278 +10:00 [INF] Request starting HTTP/2.0 GET https://localhost:44355/swagger/v2/swagger.json  
+2020-04-07 22:15:11.331 +10:00 [INF] Request finished in 54.8206ms 200 application/json;charset=utf-8
+2020-04-07 22:16:25.514 +10:00 [INF] Request starting HTTP/2.0 GET https://localhost:44355/api/v2/Todo/all-paged-filered-sorted?Filters=CategoryId%3D%3D2&Sorts=CategoryId&Page=1&PageSize=5  
+2020-04-07 22:16:25.595 +10:00 [INF] Executing endpoint 'Dotnet.Core.Todos.Api.Controllers.TodoController.GetV2 (Dotnet.Core.Todos.Api)'
+2020-04-07 22:16:25.686 +10:00 [INF] Route matched with {action = "GetV2", controller = "Todo"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[Dotnet.Core.Todos.Api.Models.TodoViewModel] GetV2(Sieve.Models.SieveModel) on controller Dotnet.Core.Todos.Api.Controllers.TodoController (Dotnet.Core.Todos.Api).
+2020-04-07 22:16:26.399 +10:00 [INF] TodoController-> DI completed successfuly!
+2020-04-07 22:16:26.624 +10:00 [INF] Executing action method Dotnet.Core.Todos.Api.Controllers.TodoController.GetV2 (Dotnet.Core.Todos.Api) - Validation state: "Valid"
+2020-04-07 22:16:27.813 +10:00 [INF] Entity Framework Core 3.1.1 initialized 'TodoContext' using provider 'Pomelo.EntityFrameworkCore.MySql' with options: using lazy-loading proxies 
+2020-04-07 22:16:29.142 +10:00 [INF] Executed DbCommand (162ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `t`.`Id`, `t`.`Active`, `t`.`CategoryId`, `t`.`Completed`, `t`.`Description`
+FROM `Todos` AS `t`
+WHERE `t`.`CategoryId` = 2
+ORDER BY `t`.`CategoryId`
+LIMIT @__p_1 OFFSET @__p_0
+2020-04-07 22:16:29.316 +10:00 [INF] Executed action method Dotnet.Core.Todos.Api.Controllers.TodoController.GetV2 (Dotnet.Core.Todos.Api), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 2677.1133ms.
+2020-04-07 22:16:29.336 +10:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Dotnet.Core.Todos.Api.Models.TodoViewModel, Dotnet.Core.Todos.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-04-07 22:16:29.362 +10:00 [INF] Executed action Dotnet.Core.Todos.Api.Controllers.TodoController.GetV2 (Dotnet.Core.Todos.Api) in 3662.7161ms
+2020-04-07 22:16:29.368 +10:00 [INF] Executed endpoint 'Dotnet.Core.Todos.Api.Controllers.TodoController.GetV2 (Dotnet.Core.Todos.Api)'
+2020-04-07 22:16:29.379 +10:00 [INF] Request finished in 3865.7177ms 200 application/json; charset=utf-8
+2020-04-07 22:16:44.794 +10:00 [INF] Request starting HTTP/2.0 GET https://localhost:44355/api/v2/Todo/all-paged-filered-sorted?Filters=CategoryId%3D%3D2&Sorts=CategoryId&Page=1&PageSize=3  
+2020-04-07 22:16:44.805 +10:00 [INF] Executing endpoint 'Dotnet.Core.Todos.Api.Controllers.TodoController.GetV2 (Dotnet.Core.Todos.Api)'
+2020-04-07 22:16:44.830 +10:00 [INF] Route matched with {action = "GetV2", controller = "Todo"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[Dotnet.Core.Todos.Api.Models.TodoViewModel] GetV2(Sieve.Models.SieveModel) on controller Dotnet.Core.Todos.Api.Controllers.TodoController (Dotnet.Core.Todos.Api).
+2020-04-07 22:16:44.841 +10:00 [INF] TodoController-> DI completed successfuly!
+2020-04-07 22:16:44.895 +10:00 [INF] Executing action method Dotnet.Core.Todos.Api.Controllers.TodoController.GetV2 (Dotnet.Core.Todos.Api) - Validation state: "Valid"
+2020-04-07 22:16:44.936 +10:00 [INF] Entity Framework Core 3.1.1 initialized 'TodoContext' using provider 'Pomelo.EntityFrameworkCore.MySql' with options: using lazy-loading proxies 
+2020-04-07 22:16:44.956 +10:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `t`.`Id`, `t`.`Active`, `t`.`CategoryId`, `t`.`Completed`, `t`.`Description`
+FROM `Todos` AS `t`
+WHERE `t`.`CategoryId` = 2
+ORDER BY `t`.`CategoryId`
+LIMIT @__p_1 OFFSET @__p_0
+2020-04-07 22:16:44.964 +10:00 [INF] Executed action method Dotnet.Core.Todos.Api.Controllers.TodoController.GetV2 (Dotnet.Core.Todos.Api), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 62.0162ms.
+2020-04-07 22:16:44.973 +10:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Dotnet.Core.Todos.Api.Models.TodoViewModel, Dotnet.Core.Todos.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-04-07 22:16:44.982 +10:00 [INF] Executed action Dotnet.Core.Todos.Api.Controllers.TodoController.GetV2 (Dotnet.Core.Todos.Api) in 145.02ms
+2020-04-07 22:16:44.993 +10:00 [INF] Executed endpoint 'Dotnet.Core.Todos.Api.Controllers.TodoController.GetV2 (Dotnet.Core.Todos.Api)'
+2020-04-07 22:16:45.004 +10:00 [INF] Request finished in 210.1607ms 200 application/json; charset=utf-8
+2020-04-07 22:17:02.060 +10:00 [INF] Request starting HTTP/2.0 GET https://localhost:44355/api/v2/Todo/all-v2  
+2020-04-07 22:17:02.099 +10:00 [INF] Executing endpoint 'Dotnet.Core.Todos.Api.Controllers.TodoController.GetV2 (Dotnet.Core.Todos.Api)'
+2020-04-07 22:17:02.147 +10:00 [INF] Route matched with {action = "GetV2", controller = "Todo"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[Dotnet.Core.Todos.Api.Models.TodoViewModel] GetV2() on controller Dotnet.Core.Todos.Api.Controllers.TodoController (Dotnet.Core.Todos.Api).
+2020-04-07 22:17:02.160 +10:00 [INF] TodoController-> DI completed successfuly!
+2020-04-07 22:17:02.203 +10:00 [INF] Executing action method Dotnet.Core.Todos.Api.Controllers.TodoController.GetV2 (Dotnet.Core.Todos.Api) - Validation state: "Valid"
+2020-04-07 22:17:02.229 +10:00 [INF] Entity Framework Core 3.1.1 initialized 'TodoContext' using provider 'Pomelo.EntityFrameworkCore.MySql' with options: using lazy-loading proxies 
+2020-04-07 22:17:02.247 +10:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `t`.`Id`, `t`.`Active`, `t`.`CategoryId`, `t`.`Completed`, `t`.`Description`
+FROM `Todos` AS `t`
+2020-04-07 22:17:02.270 +10:00 [INF] Executed action method Dotnet.Core.Todos.Api.Controllers.TodoController.GetV2 (Dotnet.Core.Todos.Api), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 61.6327ms.
+2020-04-07 22:17:02.279 +10:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Dotnet.Core.Todos.Api.Models.TodoViewModel, Dotnet.Core.Todos.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-04-07 22:17:02.292 +10:00 [INF] Executed action Dotnet.Core.Todos.Api.Controllers.TodoController.GetV2 (Dotnet.Core.Todos.Api) in 136.3953ms
+2020-04-07 22:17:02.303 +10:00 [INF] Executed endpoint 'Dotnet.Core.Todos.Api.Controllers.TodoController.GetV2 (Dotnet.Core.Todos.Api)'
+2020-04-07 22:17:02.310 +10:00 [INF] Request finished in 250.4014ms 200 application/json; charset=utf-8
+2020-04-07 22:17:03.678 +10:00 [INF] Request starting HTTP/2.0 GET https://localhost:44355/api/v2/Todo/all-v2  
+2020-04-07 22:17:03.686 +10:00 [INF] Executing endpoint 'Dotnet.Core.Todos.Api.Controllers.TodoController.GetV2 (Dotnet.Core.Todos.Api)'
+2020-04-07 22:17:03.693 +10:00 [INF] Route matched with {action = "GetV2", controller = "Todo"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[Dotnet.Core.Todos.Api.Models.TodoViewModel] GetV2() on controller Dotnet.Core.Todos.Api.Controllers.TodoController (Dotnet.Core.Todos.Api).
+2020-04-07 22:17:03.702 +10:00 [INF] TodoController-> DI completed successfuly!
+2020-04-07 22:17:03.748 +10:00 [INF] Executing action method Dotnet.Core.Todos.Api.Controllers.TodoController.GetV2 (Dotnet.Core.Todos.Api) - Validation state: "Valid"
+2020-04-07 22:17:03.757 +10:00 [INF] Executed action method Dotnet.Core.Todos.Api.Controllers.TodoController.GetV2 (Dotnet.Core.Todos.Api), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 1.1523ms.
+2020-04-07 22:17:03.765 +10:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Dotnet.Core.Todos.Api.Models.TodoViewModel, Dotnet.Core.Todos.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-04-07 22:17:03.775 +10:00 [INF] Executed action Dotnet.Core.Todos.Api.Controllers.TodoController.GetV2 (Dotnet.Core.Todos.Api) in 74.7469ms
+2020-04-07 22:17:03.782 +10:00 [INF] Executed endpoint 'Dotnet.Core.Todos.Api.Controllers.TodoController.GetV2 (Dotnet.Core.Todos.Api)'
+2020-04-07 22:17:03.790 +10:00 [INF] Request finished in 111.4961ms 200 application/json; charset=utf-8
+2020-04-07 22:17:04.709 +10:00 [INF] Request starting HTTP/2.0 GET https://localhost:44355/api/v2/Todo/all-v2  
+2020-04-07 22:17:04.716 +10:00 [INF] Executing endpoint 'Dotnet.Core.Todos.Api.Controllers.TodoController.GetV2 (Dotnet.Core.Todos.Api)'
+2020-04-07 22:17:04.723 +10:00 [INF] Route matched with {action = "GetV2", controller = "Todo"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[Dotnet.Core.Todos.Api.Models.TodoViewModel] GetV2() on controller Dotnet.Core.Todos.Api.Controllers.TodoController (Dotnet.Core.Todos.Api).
+2020-04-07 22:17:04.729 +10:00 [INF] TodoController-> DI completed successfuly!
+2020-04-07 22:17:04.776 +10:00 [INF] Executing action method Dotnet.Core.Todos.Api.Controllers.TodoController.GetV2 (Dotnet.Core.Todos.Api) - Validation state: "Valid"
+2020-04-07 22:17:04.782 +10:00 [INF] Executed action method Dotnet.Core.Todos.Api.Controllers.TodoController.GetV2 (Dotnet.Core.Todos.Api), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 0.322ms.
+2020-04-07 22:17:04.791 +10:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Dotnet.Core.Todos.Api.Models.TodoViewModel, Dotnet.Core.Todos.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-04-07 22:17:04.798 +10:00 [INF] Executed action Dotnet.Core.Todos.Api.Controllers.TodoController.GetV2 (Dotnet.Core.Todos.Api) in 69.6002ms
+2020-04-07 22:17:04.809 +10:00 [INF] Executed endpoint 'Dotnet.Core.Todos.Api.Controllers.TodoController.GetV2 (Dotnet.Core.Todos.Api)'
+2020-04-07 22:17:04.816 +10:00 [INF] Request finished in 107.4094ms 200 application/json; charset=utf-8
+2020-04-07 22:17:05.570 +10:00 [INF] Request starting HTTP/2.0 GET https://localhost:44355/api/v2/Todo/all-v2  
+2020-04-07 22:17:05.577 +10:00 [INF] Executing endpoint 'Dotnet.Core.Todos.Api.Controllers.TodoController.GetV2 (Dotnet.Core.Todos.Api)'
+2020-04-07 22:17:05.585 +10:00 [INF] Route matched with {action = "GetV2", controller = "Todo"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[Dotnet.Core.Todos.Api.Models.TodoViewModel] GetV2() on controller Dotnet.Core.Todos.Api.Controllers.TodoController (Dotnet.Core.Todos.Api).
+2020-04-07 22:17:05.594 +10:00 [INF] TodoController-> DI completed successfuly!
+2020-04-07 22:17:05.645 +10:00 [INF] Executing action method Dotnet.Core.Todos.Api.Controllers.TodoController.GetV2 (Dotnet.Core.Todos.Api) - Validation state: "Valid"
+2020-04-07 22:17:05.653 +10:00 [INF] Executed action method Dotnet.Core.Todos.Api.Controllers.TodoController.GetV2 (Dotnet.Core.Todos.Api), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 0.2514ms.
+2020-04-07 22:17:05.661 +10:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Dotnet.Core.Todos.Api.Models.TodoViewModel, Dotnet.Core.Todos.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-04-07 22:17:05.672 +10:00 [INF] Executed action Dotnet.Core.Todos.Api.Controllers.TodoController.GetV2 (Dotnet.Core.Todos.Api) in 79.3794ms
+2020-04-07 22:17:05.679 +10:00 [INF] Executed endpoint 'Dotnet.Core.Todos.Api.Controllers.TodoController.GetV2 (Dotnet.Core.Todos.Api)'
+2020-04-07 22:17:05.686 +10:00 [INF] Request finished in 115.9876ms 200 application/json; charset=utf-8
+2020-04-07 22:17:06.487 +10:00 [INF] Request starting HTTP/2.0 GET https://localhost:44355/api/v2/Todo/all-v2  
+2020-04-07 22:17:06.495 +10:00 [INF] Executing endpoint 'Dotnet.Core.Todos.Api.Controllers.TodoController.GetV2 (Dotnet.Core.Todos.Api)'
+2020-04-07 22:17:06.504 +10:00 [INF] Route matched with {action = "GetV2", controller = "Todo"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[Dotnet.Core.Todos.Api.Models.TodoViewModel] GetV2() on controller Dotnet.Core.Todos.Api.Controllers.TodoController (Dotnet.Core.Todos.Api).
+2020-04-07 22:17:06.513 +10:00 [INF] TodoController-> DI completed successfuly!
+2020-04-07 22:17:06.558 +10:00 [INF] Executing action method Dotnet.Core.Todos.Api.Controllers.TodoController.GetV2 (Dotnet.Core.Todos.Api) - Validation state: "Valid"
+2020-04-07 22:17:06.564 +10:00 [INF] Executed action method Dotnet.Core.Todos.Api.Controllers.TodoController.GetV2 (Dotnet.Core.Todos.Api), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 0.3623ms.
+2020-04-07 22:17:06.572 +10:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Dotnet.Core.Todos.Api.Models.TodoViewModel, Dotnet.Core.Todos.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-04-07 22:17:06.579 +10:00 [INF] Executed action Dotnet.Core.Todos.Api.Controllers.TodoController.GetV2 (Dotnet.Core.Todos.Api) in 66.7609ms
+2020-04-07 22:17:06.588 +10:00 [INF] Executed endpoint 'Dotnet.Core.Todos.Api.Controllers.TodoController.GetV2 (Dotnet.Core.Todos.Api)'
+2020-04-07 22:17:06.594 +10:00 [INF] Request finished in 106.6251ms 200 application/json; charset=utf-8
+2020-04-07 22:21:12.677 +10:00 [INF] User profile is available. Using 'C:\Users\Rahman\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-04-07 22:21:13.360 +10:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-04-07 22:21:13.373 +10:00 [INF] Hosting environment: Development
+2020-04-07 22:21:13.392 +10:00 [INF] Content root path: D:\Rahman\Dotnet.Core.Database\Dotnet.Core.Todos.Api
+2020-04-07 22:21:13.493 +10:00 [INF] Request starting HTTP/2.0 GET https://localhost:44355/swagger/index.html  
+2020-04-07 22:21:13.637 +10:00 [INF] Request finished in 149.2118ms 200 text/html;charset=utf-8
+2020-04-07 22:21:14.083 +10:00 [INF] Request starting HTTP/2.0 GET https://localhost:44355/swagger/v1/swagger.json  
+2020-04-07 22:21:14.760 +10:00 [INF] Request finished in 678.9023ms 200 application/json;charset=utf-8
+2020-04-07 22:21:20.710 +10:00 [INF] Request starting HTTP/2.0 GET https://localhost:44355/api/v1/Todo/all  
+2020-04-07 22:21:20.779 +10:00 [INF] Executing endpoint 'Dotnet.Core.Todos.Api.Controllers.TodoController.Get (Dotnet.Core.Todos.Api)'
+2020-04-07 22:21:20.841 +10:00 [INF] Route matched with {action = "Get", controller = "Todo"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[Dotnet.Core.Todos.Api.Models.TodoViewModel] Get() on controller Dotnet.Core.Todos.Api.Controllers.TodoController (Dotnet.Core.Todos.Api).
+2020-04-07 22:21:21.328 +10:00 [INF] TodoController-> DI completed successfuly!
+2020-04-07 22:21:21.489 +10:00 [INF] Executing action method Dotnet.Core.Todos.Api.Controllers.TodoController.Get (Dotnet.Core.Todos.Api) - Validation state: "Valid"
+2020-04-07 22:21:22.524 +10:00 [INF] Entity Framework Core 3.1.1 initialized 'TodoContext' using provider 'Pomelo.EntityFrameworkCore.MySql' with options: using lazy-loading proxies 
+2020-04-07 22:21:23.223 +10:00 [INF] Executed DbCommand (58ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `t`.`Id`, `t`.`Active`, `t`.`CategoryId`, `t`.`Completed`, `t`.`Description`
+FROM `Todos` AS `t`
+2020-04-07 22:21:23.395 +10:00 [INF] Executed action method Dotnet.Core.Todos.Api.Controllers.TodoController.Get (Dotnet.Core.Todos.Api), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 1891.7855ms.
+2020-04-07 22:21:23.411 +10:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Dotnet.Core.Todos.Api.Models.TodoViewModel, Dotnet.Core.Todos.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-04-07 22:21:23.438 +10:00 [INF] Executed action Dotnet.Core.Todos.Api.Controllers.TodoController.Get (Dotnet.Core.Todos.Api) in 2582.3067ms
+2020-04-07 22:21:23.444 +10:00 [INF] Executed endpoint 'Dotnet.Core.Todos.Api.Controllers.TodoController.Get (Dotnet.Core.Todos.Api)'
+2020-04-07 22:21:23.457 +10:00 [INF] Request finished in 2747.5012ms 200 application/json; charset=utf-8
+2020-04-07 22:21:24.844 +10:00 [INF] Request starting HTTP/2.0 GET https://localhost:44355/api/v1/Todo/all  
+2020-04-07 22:21:24.856 +10:00 [INF] Executing endpoint 'Dotnet.Core.Todos.Api.Controllers.TodoController.Get (Dotnet.Core.Todos.Api)'
+2020-04-07 22:21:24.863 +10:00 [INF] Route matched with {action = "Get", controller = "Todo"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[Dotnet.Core.Todos.Api.Models.TodoViewModel] Get() on controller Dotnet.Core.Todos.Api.Controllers.TodoController (Dotnet.Core.Todos.Api).
+2020-04-07 22:21:24.872 +10:00 [INF] TodoController-> DI completed successfuly!
+2020-04-07 22:21:24.924 +10:00 [INF] Executing action method Dotnet.Core.Todos.Api.Controllers.TodoController.Get (Dotnet.Core.Todos.Api) - Validation state: "Valid"
+2020-04-07 22:21:24.967 +10:00 [INF] Entity Framework Core 3.1.1 initialized 'TodoContext' using provider 'Pomelo.EntityFrameworkCore.MySql' with options: using lazy-loading proxies 
+2020-04-07 22:21:24.983 +10:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `t`.`Id`, `t`.`Active`, `t`.`CategoryId`, `t`.`Completed`, `t`.`Description`
+FROM `Todos` AS `t`
+2020-04-07 22:21:24.992 +10:00 [INF] Executed action method Dotnet.Core.Todos.Api.Controllers.TodoController.Get (Dotnet.Core.Todos.Api), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 62.2178ms.
+2020-04-07 22:21:24.999 +10:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Dotnet.Core.Todos.Api.Models.TodoViewModel, Dotnet.Core.Todos.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-04-07 22:21:25.014 +10:00 [INF] Executed action Dotnet.Core.Todos.Api.Controllers.TodoController.Get (Dotnet.Core.Todos.Api) in 144.1094ms
+2020-04-07 22:21:25.030 +10:00 [INF] Executed endpoint 'Dotnet.Core.Todos.Api.Controllers.TodoController.Get (Dotnet.Core.Todos.Api)'
+2020-04-07 22:21:25.042 +10:00 [INF] Request finished in 198.3591ms 200 application/json; charset=utf-8
+2020-04-07 22:21:26.141 +10:00 [INF] Request starting HTTP/2.0 GET https://localhost:44355/api/v1/Todo/all  
+2020-04-07 22:21:26.150 +10:00 [INF] Executing endpoint 'Dotnet.Core.Todos.Api.Controllers.TodoController.Get (Dotnet.Core.Todos.Api)'
+2020-04-07 22:21:26.158 +10:00 [INF] Route matched with {action = "Get", controller = "Todo"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[Dotnet.Core.Todos.Api.Models.TodoViewModel] Get() on controller Dotnet.Core.Todos.Api.Controllers.TodoController (Dotnet.Core.Todos.Api).
+2020-04-07 22:21:26.174 +10:00 [INF] TodoController-> DI completed successfuly!
+2020-04-07 22:21:26.693 +10:00 [INF] Executing action method Dotnet.Core.Todos.Api.Controllers.TodoController.Get (Dotnet.Core.Todos.Api) - Validation state: "Valid"
+2020-04-07 22:21:26.730 +10:00 [INF] Entity Framework Core 3.1.1 initialized 'TodoContext' using provider 'Pomelo.EntityFrameworkCore.MySql' with options: using lazy-loading proxies 
+2020-04-07 22:21:26.749 +10:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `t`.`Id`, `t`.`Active`, `t`.`CategoryId`, `t`.`Completed`, `t`.`Description`
+FROM `Todos` AS `t`
+2020-04-07 22:21:26.761 +10:00 [INF] Executed action method Dotnet.Core.Todos.Api.Controllers.TodoController.Get (Dotnet.Core.Todos.Api), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 50.8932ms.
+2020-04-07 22:21:26.770 +10:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Dotnet.Core.Todos.Api.Models.TodoViewModel, Dotnet.Core.Todos.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-04-07 22:21:26.778 +10:00 [INF] Executed action Dotnet.Core.Todos.Api.Controllers.TodoController.Get (Dotnet.Core.Todos.Api) in 611.5065ms
+2020-04-07 22:21:26.786 +10:00 [INF] Executed endpoint 'Dotnet.Core.Todos.Api.Controllers.TodoController.Get (Dotnet.Core.Todos.Api)'
+2020-04-07 22:21:26.793 +10:00 [INF] Request finished in 651.6976ms 200 application/json; charset=utf-8
+2020-04-07 22:21:32.755 +10:00 [INF] Request starting HTTP/2.0 GET https://localhost:44355/swagger/v2/swagger.json  
+2020-04-07 22:21:32.786 +10:00 [INF] Request finished in 31.7959ms 200 application/json;charset=utf-8
+2020-04-07 22:21:37.595 +10:00 [INF] Request starting HTTP/2.0 GET https://localhost:44355/api/v2/Todo/all-v2  
+2020-04-07 22:21:37.606 +10:00 [INF] Executing endpoint 'Dotnet.Core.Todos.Api.Controllers.TodoController.GetV2 (Dotnet.Core.Todos.Api)'
+2020-04-07 22:21:37.618 +10:00 [INF] Route matched with {action = "GetV2", controller = "Todo"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[Dotnet.Core.Todos.Api.Models.TodoViewModel] GetV2() on controller Dotnet.Core.Todos.Api.Controllers.TodoController (Dotnet.Core.Todos.Api).
+2020-04-07 22:21:37.624 +10:00 [INF] TodoController-> DI completed successfuly!
+2020-04-07 22:21:37.670 +10:00 [INF] Executing action method Dotnet.Core.Todos.Api.Controllers.TodoController.GetV2 (Dotnet.Core.Todos.Api) - Validation state: "Valid"
+2020-04-07 22:21:37.688 +10:00 [INF] Entity Framework Core 3.1.1 initialized 'TodoContext' using provider 'Pomelo.EntityFrameworkCore.MySql' with options: using lazy-loading proxies 
+2020-04-07 22:21:37.698 +10:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `t`.`Id`, `t`.`Active`, `t`.`CategoryId`, `t`.`Completed`, `t`.`Description`
+FROM `Todos` AS `t`
+2020-04-07 22:21:37.716 +10:00 [INF] Executed action method Dotnet.Core.Todos.Api.Controllers.TodoController.GetV2 (Dotnet.Core.Todos.Api), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 41.5985ms.
+2020-04-07 22:21:37.722 +10:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Dotnet.Core.Todos.Api.Models.TodoViewModel, Dotnet.Core.Todos.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-04-07 22:21:37.729 +10:00 [INF] Executed action Dotnet.Core.Todos.Api.Controllers.TodoController.GetV2 (Dotnet.Core.Todos.Api) in 106.3114ms
+2020-04-07 22:21:37.737 +10:00 [INF] Executed endpoint 'Dotnet.Core.Todos.Api.Controllers.TodoController.GetV2 (Dotnet.Core.Todos.Api)'
+2020-04-07 22:21:37.744 +10:00 [INF] Request finished in 148.874ms 200 application/json; charset=utf-8
+2020-04-07 22:21:40.402 +10:00 [INF] Request starting HTTP/2.0 GET https://localhost:44355/api/v2/Todo/all-v2  
+2020-04-07 22:21:40.409 +10:00 [INF] Executing endpoint 'Dotnet.Core.Todos.Api.Controllers.TodoController.GetV2 (Dotnet.Core.Todos.Api)'
+2020-04-07 22:21:40.419 +10:00 [INF] Route matched with {action = "GetV2", controller = "Todo"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[Dotnet.Core.Todos.Api.Models.TodoViewModel] GetV2() on controller Dotnet.Core.Todos.Api.Controllers.TodoController (Dotnet.Core.Todos.Api).
+2020-04-07 22:21:40.430 +10:00 [INF] TodoController-> DI completed successfuly!
+2020-04-07 22:21:40.484 +10:00 [INF] Executing action method Dotnet.Core.Todos.Api.Controllers.TodoController.GetV2 (Dotnet.Core.Todos.Api) - Validation state: "Valid"
+2020-04-07 22:21:40.490 +10:00 [INF] Executed action method Dotnet.Core.Todos.Api.Controllers.TodoController.GetV2 (Dotnet.Core.Todos.Api), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 0.4543ms.
+2020-04-07 22:21:40.496 +10:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Dotnet.Core.Todos.Api.Models.TodoViewModel, Dotnet.Core.Todos.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-04-07 22:21:40.504 +10:00 [INF] Executed action Dotnet.Core.Todos.Api.Controllers.TodoController.GetV2 (Dotnet.Core.Todos.Api) in 75.8839ms
+2020-04-07 22:21:40.510 +10:00 [INF] Executed endpoint 'Dotnet.Core.Todos.Api.Controllers.TodoController.GetV2 (Dotnet.Core.Todos.Api)'
+2020-04-07 22:21:40.517 +10:00 [INF] Request finished in 115.046ms 200 application/json; charset=utf-8
+2020-04-07 22:22:04.603 +10:00 [INF] Request starting HTTP/2.0 GET https://localhost:44355/api/v2/Todo/all-paged-filered-sorted?Filters=categoryid%3D%3D2&Sorts=id&Page=1&PageSize=5  
+2020-04-07 22:22:04.609 +10:00 [INF] Executing endpoint 'Dotnet.Core.Todos.Api.Controllers.TodoController.GetV2 (Dotnet.Core.Todos.Api)'
+2020-04-07 22:22:04.645 +10:00 [INF] Route matched with {action = "GetV2", controller = "Todo"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[Dotnet.Core.Todos.Api.Models.TodoViewModel] GetV2(Sieve.Models.SieveModel) on controller Dotnet.Core.Todos.Api.Controllers.TodoController (Dotnet.Core.Todos.Api).
+2020-04-07 22:22:04.652 +10:00 [INF] TodoController-> DI completed successfuly!
+2020-04-07 22:22:04.738 +10:00 [INF] Executing action method Dotnet.Core.Todos.Api.Controllers.TodoController.GetV2 (Dotnet.Core.Todos.Api) - Validation state: "Valid"
+2020-04-07 22:22:04.744 +10:00 [INF] Entity Framework Core 3.1.1 initialized 'TodoContext' using provider 'Pomelo.EntityFrameworkCore.MySql' with options: using lazy-loading proxies 
+2020-04-07 22:22:05.179 +10:00 [INF] Executed DbCommand (48ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `t`.`Id`, `t`.`Active`, `t`.`CategoryId`, `t`.`Completed`, `t`.`Description`
+FROM `Todos` AS `t`
+WHERE `t`.`CategoryId` = 2
+ORDER BY `t`.`Id`
+LIMIT @__p_1 OFFSET @__p_0
+2020-04-07 22:22:05.187 +10:00 [INF] Executed action method Dotnet.Core.Todos.Api.Controllers.TodoController.GetV2 (Dotnet.Core.Todos.Api), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 443.7383ms.
+2020-04-07 22:22:05.193 +10:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Dotnet.Core.Todos.Api.Models.TodoViewModel, Dotnet.Core.Todos.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-04-07 22:22:05.201 +10:00 [INF] Executed action Dotnet.Core.Todos.Api.Controllers.TodoController.GetV2 (Dotnet.Core.Todos.Api) in 549.427ms
+2020-04-07 22:22:05.217 +10:00 [INF] Executed endpoint 'Dotnet.Core.Todos.Api.Controllers.TodoController.GetV2 (Dotnet.Core.Todos.Api)'
+2020-04-07 22:22:05.223 +10:00 [INF] Request finished in 620.0768ms 200 application/json; charset=utf-8
+2020-04-07 22:22:09.258 +10:00 [INF] Request starting HTTP/2.0 GET https://localhost:44355/api/v2/Todo/all-paged-filered-sorted?Filters=categoryid%3D%3D2&Sorts=id&Page=1&PageSize=5  
+2020-04-07 22:22:09.268 +10:00 [INF] Executing endpoint 'Dotnet.Core.Todos.Api.Controllers.TodoController.GetV2 (Dotnet.Core.Todos.Api)'
+2020-04-07 22:22:09.276 +10:00 [INF] Route matched with {action = "GetV2", controller = "Todo"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[Dotnet.Core.Todos.Api.Models.TodoViewModel] GetV2(Sieve.Models.SieveModel) on controller Dotnet.Core.Todos.Api.Controllers.TodoController (Dotnet.Core.Todos.Api).
+2020-04-07 22:22:09.286 +10:00 [INF] TodoController-> DI completed successfuly!
+2020-04-07 22:22:09.346 +10:00 [INF] Executing action method Dotnet.Core.Todos.Api.Controllers.TodoController.GetV2 (Dotnet.Core.Todos.Api) - Validation state: "Valid"
+2020-04-07 22:22:09.354 +10:00 [INF] Entity Framework Core 3.1.1 initialized 'TodoContext' using provider 'Pomelo.EntityFrameworkCore.MySql' with options: using lazy-loading proxies 
+2020-04-07 22:22:09.385 +10:00 [INF] Executed DbCommand (15ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `t`.`Id`, `t`.`Active`, `t`.`CategoryId`, `t`.`Completed`, `t`.`Description`
+FROM `Todos` AS `t`
+WHERE `t`.`CategoryId` = 2
+ORDER BY `t`.`Id`
+LIMIT @__p_1 OFFSET @__p_0
+2020-04-07 22:22:09.392 +10:00 [INF] Executed action method Dotnet.Core.Todos.Api.Controllers.TodoController.GetV2 (Dotnet.Core.Todos.Api), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 39.6246ms.
+2020-04-07 22:22:09.400 +10:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Dotnet.Core.Todos.Api.Models.TodoViewModel, Dotnet.Core.Todos.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-04-07 22:22:09.408 +10:00 [INF] Executed action Dotnet.Core.Todos.Api.Controllers.TodoController.GetV2 (Dotnet.Core.Todos.Api) in 122.7959ms
+2020-04-07 22:22:09.414 +10:00 [INF] Executed endpoint 'Dotnet.Core.Todos.Api.Controllers.TodoController.GetV2 (Dotnet.Core.Todos.Api)'
+2020-04-07 22:22:09.422 +10:00 [INF] Request finished in 163.7223ms 200 application/json; charset=utf-8

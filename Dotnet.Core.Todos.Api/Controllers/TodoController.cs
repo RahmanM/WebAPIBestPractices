@@ -75,9 +75,11 @@ namespace Dotnet.Core.Todos.Api.Controllers
         /// Get a Todo with sorting, filtering and paging 
         /// </summary>
         /// <remarks>
-        /// Sample request: CategoryId==2,Sort=Id,page=1,pageSize=3
+        /// Sample request: 
+        /// 
+        /// CategoryId==2,Sort=Id,page=1,pageSize=3
         ///
-        ///     api/v2/Todo/GetWithFilerAndSortV2?Filters=CategoryId%3D%3D2&Sorts=Id&Page=1&PageSize=3
+        /// api/v2/Todo/GetWithFilerAndSortV2?Filters=CategoryId%3D%3D2&Sorts=Id&Page=1&PageSize=3
         ///
         /// </remarks>
         /// <returns>Returns a list of Todos</returns>
@@ -125,9 +127,22 @@ namespace Dotnet.Core.Todos.Api.Controllers
         /// <summary>
         /// Create new Todo
         /// </summary>
-        /// <param name="todoViewModel">Todo view mdoel</param>
+        /// <remarks>
+        /// Sample:
+        /// 
+        /// {
+        ///  "description": "updated",
+        ///  "completed": true,
+        ///  "categoryId": 2,
+        ///  "active": true
+        /// }
+        /// </remarks>
+        /// <param name="todoViewModel">Todo ViewModel</param>
         /// <returns>Updated todo with new ID created</returns>
         [HttpPost("create-todo")]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> Post(TodoViewModel todoViewModel)
         {
             var todo = _mapper.Map<Todo>(todoViewModel);
@@ -155,6 +170,7 @@ namespace Dotnet.Core.Todos.Api.Controllers
         [HttpPut("update-todo")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> Put(UpdateTodoViewModel todoViewModel)
         {
             var todo = _mapper.Map<Todo>(todoViewModel);
@@ -165,11 +181,17 @@ namespace Dotnet.Core.Todos.Api.Controllers
         /// <summary>
         /// Delelte a todo by Id
         /// </summary>
+        /// <remarks>
+        /// Sample:
+        /// 
+        /// Get api/v1/Todo
+        /// </remarks>
         /// <param name="id">Todo Id</param>
         [ModelValidation]
         [HttpDelete( "delete-todo")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> Delete([Required] int id)
         {
             await _todoRepository.DeleteAsync(id);

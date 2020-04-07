@@ -5,6 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="GenericRepository\**" />
+    <EmbeddedResource Remove="GenericRepository\**" />
+    <None Remove="GenericRepository\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Dotnet.Core.Database\Dotnet.Core.Todos.Database.csproj" />
     <ProjectReference Include="..\Dotnet.Core.Todo.Common\Dotnet.Core.Todos.Common.csproj" />
   </ItemGroup>

@@ -57,7 +57,17 @@
             <summary>
             Create new Todo
             </summary>
-            <param name="todoViewModel">Todo view mdoel</param>
+            <remarks>
+            Sample:
+            
+            {
+             "description": "updated",
+             "completed": true,
+             "categoryId": 2,
+             "active": true
+            }
+            </remarks>
+            <param name="todoViewModel">Todo ViewModel</param>
             <returns>Updated todo with new ID created</returns>
         </member>
         <member name="M:Dotnet.Core.Todos.Api.Controllers.TodoController.Put(Dotnet.Core.Todos.Api.Models.UpdateTodoViewModel)">
@@ -82,6 +92,11 @@
             <summary>
             Delelte a todo by Id
             </summary>
+            <remarks>
+            Sample:
+            
+            Get api/v1/Todo
+            </remarks>
             <param name="id">Todo Id</param>
         </member>
         <member name="T:Dotnet.Core.Todos.Api.CachingDecorators.TodoCachingDecorator">

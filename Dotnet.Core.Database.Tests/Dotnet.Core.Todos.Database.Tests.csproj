@@ -13,6 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Donet.Core.Todos.Data\Donet.Core.Todos.Data.csproj" />
     <ProjectReference Include="..\Dotnet.Core.Database\Dotnet.Core.Todos.Database.csproj" />
   </ItemGroup>
 
